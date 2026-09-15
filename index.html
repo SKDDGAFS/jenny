@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ee">
+  <title>My Journal</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="journal-content.js" defer></script>
+</head>
+<body>
+  <canvas id="tunnel" aria-hidden="true"></canvas>
+  <main id="journal" aria-label="My Journal" inert>
+    <div class="stage">
+      <div class="book-position">
+        <div class="book" id="book" aria-label="Journal pages"></div>
+      </div>
+      <div class="pen" aria-hidden="true"><i></i></div>
+    </div>
+    <nav aria-label="Page navigation">
+      <button id="previous" aria-label="Previous page" disabled>← Previous</button>
+      <button id="next" aria-label="Next page">Next →</button>
+    </nav>
+    <aside class="music-player" aria-label="Music player">
+      <div class="music-heading"><span class="music-icon" aria-hidden="true">♫</span><div><span id="track-title">act ii date</span><span id="track-artist">4Batz</span></div></div>
+      <audio id="audio" preload="metadata"></audio>
+      <input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Playback position" disabled>
+      <div class="music-times"><span id="elapsed">0:00</span><span id="total-time">0:00</span></div>
+      <div class="music-controls"><button id="previous-track" aria-label="Previous song">‹</button><button id="play-pause" aria-label="Play" disabled>▶</button><button id="next-track" aria-label="Next song">›</button></div>
+      <p id="audio-status" role="status"></p>
+    </aside>
+  </main>
+  <dialog id="photo-viewer" aria-label="Enlarged photo"><button id="close-photo" aria-label="Close photo">×</button><div id="zoom-photo"></div></dialog>
+</body>
+</html>
